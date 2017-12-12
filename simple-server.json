@@ -1,0 +1,65 @@
+[
+  {
+    "id": "8cc0c534.1b1ad",
+    "type": "http in",
+    "z": "4197dbf9.813494",
+    "name": "",
+    "url": "/wassuping",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 120,
+    "y": 120,
+    "wires": [
+      [
+        "7003f1ee.47a93"
+      ]
+    ]
+  },
+  {
+    "id": "7003f1ee.47a93",
+    "type": "function",
+    "z": "4197dbf9.813494",
+    "name": "",
+    "func": "msg.payload = {\n    goats: 67,\n    msg: \"67 goats on the wall g\"\n    \n};\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 310,
+    "y": 120,
+    "wires": [
+      [
+        "ac6db7ca.6747a"
+      ]
+    ]
+  },
+  {
+    "id": "f06ff1de.6ccfb",
+    "type": "http response",
+    "z": "4197dbf9.813494",
+    "name": "",
+    "statusCode": "",
+    "headers": {},
+    "x": 770,
+    "y": 200,
+    "wires": []
+  },
+  {
+    "id": "ac6db7ca.6747a",
+    "type": "template",
+    "z": "4197dbf9.813494",
+    "name": "",
+    "field": "payload",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "<h2> {{payload.msg}} </h2>\n{{payload.goats}}",
+    "output": "str",
+    "x": 510,
+    "y": 140,
+    "wires": [
+      [
+        "f06ff1de.6ccfb"
+      ]
+    ]
+  }
+]
