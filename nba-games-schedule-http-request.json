@@ -1,0 +1,60 @@
+[
+  {
+    "id": "c3899768.86662",
+    "type": "http in",
+    "z": "4197dbf9.813494",
+    "name": "",
+    "url": "/nba-feed",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 210,
+    "y": 160,
+    "wires": [
+      [
+        "bdd023c6.9de09"
+      ]
+    ]
+  },
+  {
+    "id": "b4cb099c.55d61",
+    "type": "http response",
+    "z": "4197dbf9.813494",
+    "name": "",
+    "statusCode": "",
+    "headers": {},
+    "x": 810,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "bdd023c6.9de09",
+    "type": "http request",
+    "z": "4197dbf9.813494",
+    "name": "",
+    "method": "GET",
+    "ret": "txt",
+    "url": "https://api.mysportsfeeds.com/v1.1/pull/nba/2017-playoff/full_game_schedule.json",
+    "tls": "",
+    "x": 470,
+    "y": 160,
+    "wires": [
+      [
+        "b4cb099c.55d61",
+        "c9be2acb.38aa"
+      ]
+    ]
+  },
+  {
+    "id": "c9be2acb.38aa",
+    "type": "debug",
+    "z": "4197dbf9.813494",
+    "name": "",
+    "active": true,
+    "console": "false",
+    "complete": "false",
+    "x": 910,
+    "y": 100,
+    "wires": []
+  }
+]
