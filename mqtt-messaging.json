@@ -1,0 +1,129 @@
+[
+  {
+    "id": "8d56668b.9256e",
+    "type": "inject",
+    "z": "5629a8b7.fb4d88",
+    "name": "",
+    "topic": "",
+    "payload": "Spaghetti",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "x": 220,
+    "y": 420,
+    "wires": [
+      [
+        "f4625468.48ef38"
+      ]
+    ]
+  },
+  {
+    "id": "f4625468.48ef38",
+    "type": "mqtt out",
+    "z": "5629a8b7.fb4d88",
+    "name": "Publisher",
+    "topic": "meal/lunch/",
+    "qos": "2",
+    "retain": "true",
+    "broker": "804c65fd.f96a1",
+    "x": 610,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "fe09e7b1.7eb578",
+    "type": "mqtt in",
+    "z": "5629a8b7.fb4d88",
+    "name": "",
+    "topic": "meal/lunch/",
+    "qos": "2",
+    "broker": "804c65fd.f96a1",
+    "x": 210,
+    "y": 220,
+    "wires": [
+      [
+        "720a1c8.0d321e4"
+      ]
+    ]
+  },
+  {
+    "id": "17003c90.17e0db",
+    "type": "debug",
+    "z": "5629a8b7.fb4d88",
+    "name": "",
+    "active": true,
+    "console": "false",
+    "complete": "false",
+    "x": 750,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "bc9f3a6a.2f5d18",
+    "type": "comment",
+    "z": "5629a8b7.fb4d88",
+    "name": "Publisher",
+    "info": "",
+    "x": 200,
+    "y": 360,
+    "wires": []
+  },
+  {
+    "id": "f97b686f.dc086",
+    "type": "comment",
+    "z": "5629a8b7.fb4d88",
+    "name": "Made by Singh",
+    "info": "MQTT\n\nDec 18 2017\nRebabre",
+    "x": 780,
+    "y": 520,
+    "wires": []
+  },
+  {
+    "id": "9c3ce278.0e1768",
+    "type": "comment",
+    "z": "5629a8b7.fb4d88",
+    "name": "Subscriber",
+    "info": "",
+    "x": 200,
+    "y": 172,
+    "wires": []
+  },
+  {
+    "id": "720a1c8.0d321e4",
+    "type": "template",
+    "z": "5629a8b7.fb4d88",
+    "name": "msg recieved",
+    "field": "payload",
+    "fieldType": "msg",
+    "format": "handlebars",
+    "syntax": "mustache",
+    "template": "Message recieved: {{payload}}",
+    "output": "str",
+    "x": 490,
+    "y": 220,
+    "wires": [
+      [
+        "17003c90.17e0db"
+      ]
+    ]
+  },
+  {
+    "id": "804c65fd.f96a1",
+    "type": "mqtt-broker",
+    "z": "",
+    "broker": "test.mosquitto.org",
+    "port": "1883",
+    "clientid": "",
+    "usetls": false,
+    "compatmode": true,
+    "keepalive": "60",
+    "cleansession": true,
+    "willTopic": "",
+    "willQos": "0",
+    "willPayload": "",
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthPayload": ""
+  }
+]
